@@ -10,8 +10,8 @@
 
 
 <#list products as item>
-    <div>
-        <span>Product: #${item_index}</span>
+    <div id="product_container">
+        <span id="product_name">Product: #${item_index}</span>
         <p>Name: ${item.name}</p>
         <p>Price: ${item.price}</p>
     </div>

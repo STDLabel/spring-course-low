@@ -33,7 +33,14 @@ public class ProductController {
 
 
     @GetMapping("list")
-    public String listProduct(Model model){
+    public String listProduct(Model model) {
+        if (products == null || products.size() == 0) {
+            products = new ArrayList<>();
+            ProductModel productModel = new ProductModel();
+            productModel.setName("Test");
+            productModel.setPrice(123);
+            products.add(productModel);
+        }
         model.addAttribute("products", products);
         return "/product/product_list";
     }
